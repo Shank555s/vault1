@@ -1,0 +1,221 @@
+/* General body and background */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    overflow: hidden; /* Prevent scrolling */
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+  /* Vault container and overall layout */
+  .vault-container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh; /* Make sure container doesn't overflow */
+  }
+  
+  /* Vault title */
+  .vault-title {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.8);
+    margin-bottom: 20px;
+    flex: 1; /* Ensure it takes up a proportionate space in the container */
+  }
+  
+  /* Vault subtitle */
+  .vault-subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #e3e3e3;
+    margin-bottom: 20px;
+  }
+  
+  /* Message feedback (hint or success message) */
+  .hint-message {
+    color: #ff0066;
+    font-size: 1rem;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Vault Card */
+  .vault-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    overflow-y: auto; /* If the content overflows vertically, it will scroll within the card */
+  }
+  
+  /* List items in the game */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin: 15px 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Shiny input fields */
+  .vault-input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    transition: 0.3s ease;
+  }
+  
+  .vault-input:focus {
+    outline: none;
+    border: 2px solid #00b3b3;
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  }
+  
+  /* Vault button style */
+  .vault-button {
+    background: linear-gradient(135deg, #00b3b3, #009999);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    transition: 0.3s ease;
+  }
+  
+  .vault-button:hover {
+    background: linear-gradient(135deg, #009999, #00b3b3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  }
+  
+  .vault-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Add glowing effect on hover */
+  input:focus, .vault-button:hover {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  /* Keyframe animation for glowing effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.7);
+    }
+  }
+  
+  /* For small screens (like mobile), adjust the font size and container size */
+  @media (max-width: 600px) {
+    .vault-title {
+      font-size: 2rem;
+    }
+  
+    .vault-card {
+      padding: 20px;
+    }
+  
+    .vault-input {
+      font-size: 0.9rem;
+    }
+  
+    .vault-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  .vault-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .vault-popup-content {
+    background: linear-gradient(145deg, #333, #444);
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: popUpAnimation 0.5s ease-out;
+  }
+  
+  .vault-popup h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+  }
+  
+  .vault-popup p {
+    font-size: 1.2rem;
+  }
+  
+  .vault-popup-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .vault-popup-button:hover {
+    background-color: #e6b800;
+  }
+  
+  @keyframes popUpAnimation {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  

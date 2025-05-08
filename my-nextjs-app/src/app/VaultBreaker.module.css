@@ -1,0 +1,168 @@
+/* Global body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a, #3b3b6b, #0f0c29);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-y: auto; /* allow scroll */
+    color: #fff;
+    box-sizing: border-box;
+    padding: 40px 20px; /* padding around the page */
+  }
+  
+  
+
+/* Vault container */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 70px rgba(0, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+.title {
+    font-size: 3.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 1);
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Card container for content */
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect for the card */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 80px rgba(0, 255, 255, 0.8);
+}
+
+/* Level text */
+.levelText {
+    font-size: 1.5rem;
+    color: #e3e3e3;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.inputField {
+    width: 90%; /* instead of 100% to add some margin inside the card */
+    max-width: 400px;
+    padding: 20px;
+    margin: 18px auto;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem; /* slightly larger */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    display: block;
+  }
+  .inputField1 {
+    width: 70%; /* instead of 100% to add some margin inside the card */
+    max-width: 230px;
+    padding: 20px;
+    margin: 18px auto;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem; /* slightly larger */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    display: block;
+  }
+  
+
+/* Submit button */
+.submitButton {
+    background: linear-gradient(135deg, #00b3b3, #009999);
+    color: #fff;
+    border: none;
+    padding: 18px 36px; /* slightly larger */
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+    transition: 0.4s ease;
+    margin-top: 10px;
+  }
+  
+
+.submitButton:hover {
+    background: linear-gradient(135deg, #009999, #00b3b3);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+}
+
+.submitButton:active {
+    transform: scale(0.98);
+}
+
+/* Feedback messages */
+.message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ff0066;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 35px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 255, 255, 1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 800px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+        overflow: hidden; /* prevents content from spilling */
+      }
+      
+
+    .inputField {
+        font-size: 1.1rem;
+    }
+
+    .submitButton {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+}
